@@ -9,7 +9,7 @@ const initMongoConnection = async () => {
   const MONGODB_DB = process.env.MONGODB_DB;
   try {
     await mongoose.connect(
-      `mongodb+srv://akovalcuk485:jHj0Wad9eYCruTsY@cluster0.xl23b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+      `mongodb+srv://akovalcuk485:jHj0Wad9eYCruTsY@cluster0.xl23b.mongodb.net/contacts?retryWrites=true&w=majority&appName=Cluster0`
     );
     console.log('Mongo connection successfully connected!');
   } catch (error) {
