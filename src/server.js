@@ -4,6 +4,7 @@ import pino from 'pino-http';
 import dotenv from 'dotenv';
 import { getAllContacts, getContactById } from './services/contacts.js';
 
+
 const setupServer = () => {
   const app = express();
   dotenv.config();
