@@ -23,7 +23,7 @@ const setupServer = () => {
   app.get('/contacts', async (req, res, next) => {
     try {
       const contacts = await getAllContacts();
-      res.status.json({
+      res.json({
         status: 200,
         message: 'Successfully found contacts!',
         data: contacts,
