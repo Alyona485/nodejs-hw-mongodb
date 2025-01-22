@@ -23,25 +23,23 @@ import {
   };
   
   export const getContactByIdController = async (req, res, next) => {
-    try {
-      const { contactId } = req.params;
-      const contact = await getContactById(contactId);
-  
-      // Відповідь, якщо контакт не знайдено
-      if (!contact) {
-        throw createError(404, 'Contact not found');
-      }
-  
-      // Відповідь, якщо контакт знайдено
-      res.json({
-        status: 200,
-        message: `Successfully found contact with id ${contactId}!`,
-        data: contact,
-      });
-    } catch (err) {
-      next(err);
+   
+    const { contactId } = req.params;
+    const contact = await getContactById(contactId);
+
+    // Відповідь, якщо контакт не знайдено
+    if (!contact) {
+      throw createError(404, 'Contact not found');
     }
-  };
+
+    // Відповідь, якщо контакт знайдено
+    res.json({
+      status: 200,
+      message: `Successfully found contact with id ${contactId}!`,
+      data: contact,
+    });
+  
+};
   
   export const createContactController = async (req, res) => {
     const contact = await createContact(req.body);
