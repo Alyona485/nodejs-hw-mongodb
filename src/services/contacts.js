@@ -13,13 +13,10 @@ export const getAllContacts = async () => {
 };
 
 export const getContactById = async (contactId) => {
-  try {
-    const contact = await ContactsCollection.findById(contactId);
-    return contact;
-  } catch (error) {
-    console.error('Error fetching contacts:', error);
-    throw error;
-  }
+  
+  return await ContactsCollection.findById(contactId);
+
+
 };
 
 export const createContact = async (payload) => {
